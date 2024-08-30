@@ -42,3 +42,8 @@ Fuente del paquete "**openxlsx**" [@openxlsx].
 str(Datos_CO2)
 summary(Datos_CO2)
 ```
+
+```{r}
+library(FSA)
+Summarize(uptake ~ Plant, data = Datos_CO2)
+```
