@@ -1,0 +1,44 @@
+---
+title: "Proyecto Final del Diplomado"
+author: "Jesús Miranda Mamani"
+date: "`r Sys.Date()`"
+lang: es
+toc: true
+toc-depth: 3
+toc-location: left
+format: html
+editor: visual
+bibliography: references.bib
+csl: apa.csl
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 7, 
+  fig.height = 5,     
+  fig.align = 'center', 
+  tidy = TRUE         
+)
+```
+
+### 1. Cargar la base de datos
+
+En este proyecto final del diplomado, utilizaremos la base de datos "**absorción de dióxido de carbono en plantas herbáceas**", la misma, está disponible en R. A continuación, importamos los datos desde excel con las siguientes líneas de códigos:
+
+```{r}
+library(openxlsx)
+Datos_CO2 <- read.xlsx("Bases/CO2.xlsx")
+Datos_CO2
+```
+
+Fuente del paquete "**openxlsx**" [@openxlsx].
+
+### 2. Explorar la base de datos
+
+```{r}
+str(Datos_CO2)
+summary(Datos_CO2)
+```
