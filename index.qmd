@@ -114,7 +114,7 @@ El reporte se ha generado con el paquete "**report**" [@report].
 report::report(Resultados_U)
 ```
 
-### Estadística descriptiva
+### C. Estadística descriptiva
 
 ```{r}
 Summarize(uptake ~ Treatment)
@@ -122,7 +122,7 @@ Summarize(uptake ~ Treatment)
 
 **Interpretación:** En el resultado, se observa diferencias significativas en la absorción de CO2 entre los tratamientos "chilled" y "nonchilled". El tratamiento "chilled" tiene una media de absorción de 23.78 con una desviación estándar de 10.88, mientras que "nonchilled" muestra una media de 30.64 con una desviación estándar de 9.70. Indicando variaciones significativas en los niveles de absorción de CO2 entre los grupos "chilled" y "nonchilled".
 
-### C. Gráfico para ilustrar los resultados
+### D. Gráfico para ilustrar los resultados
 
 El gráfico fue generado con el paquete "**ggstatsplot**" [@ggstatsplot].
 
@@ -184,13 +184,13 @@ report::report(Result_U2)
 
 El resultado nos indica que existe una diferencia significativa (W = 275.00, p \< .001; r = -0.69, IC del 95% \[-0.80, -0.53\]) entre los tratamientos.
 
-### Estadística descriptiva
+### C. Estadística descriptiva
 
 ```{r}
 Summarize(uptake ~ Type)
 ```
 
-### C. Gráfico para ilustrar los resultados
+### D. Gráfico para ilustrar los resultados
 
 ```{r}
 library(ggstatsplot)

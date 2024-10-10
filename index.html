@@ -107,15 +107,15 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#a.-verificando-supuestos" id="toc-a.-verificando-supuestos" class="nav-link" data-scroll-target="#a.-verificando-supuestos">A. Verificando supuestos</a></li>
   <li><a href="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney" id="toc-b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney" class="nav-link" data-scroll-target="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</a></li>
-  <li><a href="#estadística-descriptiva" id="toc-estadística-descriptiva" class="nav-link" data-scroll-target="#estadística-descriptiva">Estadística descriptiva</a></li>
-  <li><a href="#c.-gráfico-para-ilustrar-los-resultados" id="toc-c.-gráfico-para-ilustrar-los-resultados" class="nav-link" data-scroll-target="#c.-gráfico-para-ilustrar-los-resultados">C. Gráfico para ilustrar los resultados</a></li>
+  <li><a href="#c.-estadística-descriptiva" id="toc-c.-estadística-descriptiva" class="nav-link" data-scroll-target="#c.-estadística-descriptiva">C. Estadística descriptiva</a></li>
+  <li><a href="#d.-gráfico-para-ilustrar-los-resultados" id="toc-d.-gráfico-para-ilustrar-los-resultados" class="nav-link" data-scroll-target="#d.-gráfico-para-ilustrar-los-resultados">D. Gráfico para ilustrar los resultados</a></li>
   </ul></li>
   <li><a href="#análisis-estadístico-02" id="toc-análisis-estadístico-02" class="nav-link" data-scroll-target="#análisis-estadístico-02">Análisis Estadístico 02</a>
   <ul class="collapse">
   <li><a href="#a.-verificando-supuestos-1" id="toc-a.-verificando-supuestos-1" class="nav-link" data-scroll-target="#a.-verificando-supuestos-1">A. Verificando supuestos</a></li>
   <li><a href="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1" id="toc-b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1" class="nav-link" data-scroll-target="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</a></li>
-  <li><a href="#estadística-descriptiva-1" id="toc-estadística-descriptiva-1" class="nav-link" data-scroll-target="#estadística-descriptiva-1">Estadística descriptiva</a></li>
-  <li><a href="#c.-gráfico-para-ilustrar-los-resultados-1" id="toc-c.-gráfico-para-ilustrar-los-resultados-1" class="nav-link" data-scroll-target="#c.-gráfico-para-ilustrar-los-resultados-1">C. Gráfico para ilustrar los resultados</a></li>
+  <li><a href="#c.-estadística-descriptiva-1" id="toc-c.-estadística-descriptiva-1" class="nav-link" data-scroll-target="#c.-estadística-descriptiva-1">C. Estadística descriptiva</a></li>
+  <li><a href="#d.-gráfico-para-ilustrar-los-resultados-1" id="toc-d.-gráfico-para-ilustrar-los-resultados-1" class="nav-link" data-scroll-target="#d.-gráfico-para-ilustrar-los-resultados-1">D. Gráfico para ilustrar los resultados</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -415,8 +415,8 @@ statistically significant, and large (W = 576.50, p = 0.006; r (rank biserial)
 </div>
 </div>
 </section>
-<section id="estadística-descriptiva" class="level3">
-<h3 class="anchored" data-anchor-id="estadística-descriptiva">Estadística descriptiva</h3>
+<section id="c.-estadística-descriptiva" class="level3">
+<h3 class="anchored" data-anchor-id="c.-estadística-descriptiva">C. Estadística descriptiva</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Treatment)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -427,8 +427,8 @@ statistically significant, and large (W = 576.50, p = 0.006; r (rank biserial)
 </div>
 <p><strong>Interpretación:</strong> En el resultado, se observa diferencias significativas en la absorción de CO2 entre los tratamientos “chilled” y “nonchilled”. El tratamiento “chilled” tiene una media de absorción de 23.78 con una desviación estándar de 10.88, mientras que “nonchilled” muestra una media de 30.64 con una desviación estándar de 9.70. Indicando variaciones significativas en los niveles de absorción de CO2 entre los grupos “chilled” y “nonchilled”.</p>
 </section>
-<section id="c.-gráfico-para-ilustrar-los-resultados" class="level3">
-<h3 class="anchored" data-anchor-id="c.-gráfico-para-ilustrar-los-resultados">C. Gráfico para ilustrar los resultados</h3>
+<section id="d.-gráfico-para-ilustrar-los-resultados" class="level3">
+<h3 class="anchored" data-anchor-id="d.-gráfico-para-ilustrar-los-resultados">D. Gráfico para ilustrar los resultados</h3>
 <p>El gráfico fue generado con el paquete “<strong>ggstatsplot</strong>” <span class="citation" data-cites="ggstatsplot">(<a href="#ref-ggstatsplot" role="doc-biblioref">Patil, 2021</a>)</span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
@@ -545,8 +545,8 @@ biserial) = -0.69, 95% CI [-0.80, -0.53])</code></pre>
 </div>
 <p>El resultado nos indica que existe una diferencia significativa (W = 275.00, p &lt; .001; r = -0.69, IC del 95% [-0.80, -0.53]) entre los tratamientos.</p>
 </section>
-<section id="estadística-descriptiva-1" class="level3">
-<h3 class="anchored" data-anchor-id="estadística-descriptiva-1">Estadística descriptiva</h3>
+<section id="c.-estadística-descriptiva-1" class="level3">
+<h3 class="anchored" data-anchor-id="c.-estadística-descriptiva-1">C. Estadística descriptiva</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Type)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -556,8 +556,8 @@ biserial) = -0.69, 95% CI [-0.80, -0.53])</code></pre>
 </div>
 </div>
 </section>
-<section id="c.-gráfico-para-ilustrar-los-resultados-1" class="level3">
-<h3 class="anchored" data-anchor-id="c.-gráfico-para-ilustrar-los-resultados-1">C. Gráfico para ilustrar los resultados</h3>
+<section id="d.-gráfico-para-ilustrar-los-resultados-1" class="level3">
+<h3 class="anchored" data-anchor-id="d.-gráfico-para-ilustrar-los-resultados-1">D. Gráfico para ilustrar los resultados</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
