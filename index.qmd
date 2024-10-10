@@ -144,7 +144,8 @@ ggplot(Datos_CO2, aes(sample = uptake,
                  color = Type)) +
   geom_qq()+
   geom_qq_line() +
-  facet_grid(Type~.)
+  facet_grid(Type~.)+
+  theme_test()
 ```
 
 #### Gráfico de densidad
@@ -152,7 +153,8 @@ ggplot(Datos_CO2, aes(sample = uptake,
 ```{r}
 ggplot(Datos_CO2, aes(x = uptake, fill = Type)) +
   geom_density(alpha = 0.5) +
-  facet_wrap(~Type)
+  facet_wrap(~Type)+
+  theme_test()
 ```
 
 #### Supuesto de normalidad con test inferenciales
