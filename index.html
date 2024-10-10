@@ -102,6 +102,20 @@ div.csl-indent {
   <ul>
   <li><a href="#cargar-la-base-de-datos" id="toc-cargar-la-base-de-datos" class="nav-link active" data-scroll-target="#cargar-la-base-de-datos">1. Cargar la base de datos</a></li>
   <li><a href="#explorar-la-base-de-datos" id="toc-explorar-la-base-de-datos" class="nav-link" data-scroll-target="#explorar-la-base-de-datos">2. Explorar la base de datos</a></li>
+  <li><a href="#estadística-descriptiva" id="toc-estadística-descriptiva" class="nav-link" data-scroll-target="#estadística-descriptiva">Estadística descriptiva</a></li>
+  <li><a href="#análisis-estadístico-01" id="toc-análisis-estadístico-01" class="nav-link" data-scroll-target="#análisis-estadístico-01">Análisis Estadístico 01</a>
+  <ul class="collapse">
+  <li><a href="#a.-verificando-supuestos" id="toc-a.-verificando-supuestos" class="nav-link" data-scroll-target="#a.-verificando-supuestos">A. Verificando supuestos</a></li>
+  <li><a href="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney" id="toc-b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney" class="nav-link" data-scroll-target="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</a></li>
+  <li><a href="#c.-gráfico-para-ilustrar-los-resultados" id="toc-c.-gráfico-para-ilustrar-los-resultados" class="nav-link" data-scroll-target="#c.-gráfico-para-ilustrar-los-resultados">C. Gráfico para ilustrar los resultados</a></li>
+  </ul></li>
+  <li><a href="#análisis-estadístico-02" id="toc-análisis-estadístico-02" class="nav-link" data-scroll-target="#análisis-estadístico-02">Análisis Estadístico 02</a>
+  <ul class="collapse">
+  <li><a href="#a.-verificando-supuestos-1" id="toc-a.-verificando-supuestos-1" class="nav-link" data-scroll-target="#a.-verificando-supuestos-1">A. Verificando supuestos</a></li>
+  <li><a href="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1" id="toc-b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1" class="nav-link" data-scroll-target="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</a></li>
+  <li><a href="#estadística-descriptiva-1" id="toc-estadística-descriptiva-1" class="nav-link" data-scroll-target="#estadística-descriptiva-1">Estadística descriptiva</a></li>
+  <li><a href="#c.-gráfico-para-ilustrar-los-resultados-1" id="toc-c.-gráfico-para-ilustrar-los-resultados-1" class="nav-link" data-scroll-target="#c.-gráfico-para-ilustrar-los-resultados-1">C. Gráfico para ilustrar los resultados</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -128,7 +142,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">30 de agosto de 2024</p>
+      <p class="date">10 de octubre de 2024</p>
     </div>
   </div>
   
@@ -266,10 +280,15 @@ div.csl-indent {
  3rd Qu.:37.12  
  Max.   :45.50  </code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Datos_CO2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="estadística-descriptiva" class="level3">
+<h3 class="anchored" data-anchor-id="estadística-descriptiva">Estadística descriptiva</h3>
+<p>El resumen de estadística descriptiva fue obtenido con el paquete “FSA” <span class="citation" data-cites="FSA">(<a href="#ref-FSA" role="doc-biblioref">Ogle et&nbsp;al., 2023</a>)</span> .</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FSA)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Plant, <span class="at">data =</span> Datos_CO2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FSA)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Plant, <span class="at">data =</span> Datos_CO2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Plant n     mean        sd  min    Q1 median    Q3  max
 1    Mc1 7 18.00000  4.118657 10.5 16.50   18.9 20.70 22.2
@@ -286,10 +305,213 @@ div.csl-indent {
 12   Qn3 7 37.61429 10.349948 16.2 36.35   42.1 43.40 45.5</code></pre>
 </div>
 </div>
+</section>
+<section id="análisis-estadístico-01" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-estadístico-01">Análisis Estadístico 01</h2>
+<section id="a.-verificando-supuestos" class="level3">
+<h3 class="anchored" data-anchor-id="a.-verificando-supuestos">A. Verificando supuestos</h3>
+<section id="supuesto-de-normalidad" class="level4">
+<h4 class="anchored" data-anchor-id="supuesto-de-normalidad">Supuesto de normalidad</h4>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(uptake, Treatment, shapiro.test)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Treatment: chilled
 
+    Shapiro-Wilk normality test
+
+data:  dd[x, ]
+W = 0.89789, p-value = 0.001245
+
+------------------------------------------------------------ 
+Treatment: nonchilled
+
+    Shapiro-Wilk normality test
+
+data:  dd[x, ]
+W = 0.94505, p-value = 0.04302</code></pre>
+</div>
+</div>
+<p><strong>Interpretacion:</strong> Según la prueba de normalidad de Shapiro-Wilk, se observó que para los tratamientos “chilled” y “nonchilled”, los valores de p fueron 0.001245 y 0.04302 respectivamente. Estos valores, inferiores al nivel de significancia comúnmente utilizado de 0.05, condujeron al rechazo de la hipótesis nula en ambos casos. Por lo tanto, se puede concluir que los datos no se ajustan a una distribución normal en ninguno de los tratamientos.</p>
+<p>Al no cumplir con el supuesto de distribución normal, se decide aplicar una prueba estadística no paramétrica. Es ente caso se aplicará la prueba U de Mann-Whitney.</p>
+</section>
+<section id="supuesto-de-homogeneidad-de-varianzas" class="level4">
+<h4 class="anchored" data-anchor-id="supuesto-de-homogeneidad-de-varianzas">Supuesto de homogeneidad de varianzas</h4>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(uptake <span class="sc">~</span> Treatment)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    F test to compare two variances
+
+data:  uptake by Treatment
+F = 1.2578, num df = 41, denom df = 41, p-value = 0.466
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.6760971 2.3399895
+sample estimates:
+ratio of variances 
+            1.2578 </code></pre>
+</div>
+</div>
+<p><strong>Interpretacion:</strong> Se ha realizado una prueba F para contrastar las varianzas en relación con el tratamiento. El resultado revela un valor de p de 0.466, el cual supera el nivel de significancia de 0.05. Por consiguiente, no se rechaza la hipótesis nula. Este hallazgo sugiere que cumple con el supuesto de homocedasticidad.</p>
+</section>
+</section>
+<section id="b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney" class="level3">
+<h3 class="anchored" data-anchor-id="b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Resultados_U <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(uptake <span class="sc">~</span> Treatment)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Resultados_U</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  uptake by Treatment
+W = 576.5, p-value = 0.006358
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<p><strong>Interpretacion:</strong> La prueba U o de rangos de Wilcoxon para los datos de ‘uptake’ según el tratamiento muestra un estadístico W de 576.5 y un valor p de 0.006358. Este resultado indica que existe una diferencia significativa en las medianas de ‘uptake’ entre los diferentes tratamientos. Dado que el valor p es menor a 0.05, rechazamos la hipótesis nula de que no hay diferencia entre las medianas. Concluimos que los tratamientos influyen significativamente en ‘uptake’.</p>
+<p>El reporte lo generamos con el paquete “report” <span class="citation" data-cites="report">(<a href="#ref-report" role="doc-biblioref">Makowski et&nbsp;al., 2023</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>report<span class="sc">::</span><span class="fu">report</span>(Resultados_U)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Effect sizes were labelled following Funder's (2019) recommendations.
+
+The Wilcoxon rank sum test with continuity correction testing the difference in
+ranks between uptake and Treatment suggests that the effect is negative,
+statistically significant, and large (W = 576.50, p = 0.006; r (rank biserial)
+= -0.35, 95% CI [-0.54, -0.11])</code></pre>
+</div>
+</div>
+</section>
+<section id="c.-gráfico-para-ilustrar-los-resultados" class="level3">
+<h3 class="anchored" data-anchor-id="c.-gráfico-para-ilustrar-los-resultados">C. Gráfico para ilustrar los resultados</h3>
+<p>El gráfico fue generado con el paquete “ggstatsplot” <span class="citation" data-cites="ggstatsplot">(<a href="#ref-ggstatsplot" role="doc-biblioref">Patil, 2021</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggbetweenstats</span>(Datos_CO2, <span class="at">x =</span> Treatment, <span class="at">y =</span> uptake, <span class="at">type =</span> <span class="st">"np"</span>, <span class="at">bf.message =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="análisis-estadístico-02" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-estadístico-02">Análisis Estadístico 02</h2>
+<section id="a.-verificando-supuestos-1" class="level3">
+<h3 class="anchored" data-anchor-id="a.-verificando-supuestos-1">A. Verificando supuestos</h3>
+<section id="supuesto-de-normalidad-1" class="level4">
+<h4 class="anchored" data-anchor-id="supuesto-de-normalidad-1">Supuesto de normalidad</h4>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(uptake, Type, shapiro.test)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Type: Mississippi
+
+    Shapiro-Wilk normality test
+
+data:  dd[x, ]
+W = 0.93633, p-value = 0.0213
+
+------------------------------------------------------------ 
+Type: Quebec
+
+    Shapiro-Wilk normality test
+
+data:  dd[x, ]
+W = 0.85988, p-value = 0.0001111</code></pre>
+</div>
+</div>
+<p>Según el test de Shapiro-Wilk los tratamientos no cumplen con el supuesto de normalidad. Por lo tanto, también se decide aplicar una prueba estadística no paramétrica.</p>
+</section>
+<section id="supuesto-de-homogeneidad-de-varianzas-1" class="level4">
+<h4 class="anchored" data-anchor-id="supuesto-de-homogeneidad-de-varianzas-1">Supuesto de homogeneidad de varianzas</h4>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(uptake <span class="sc">~</span> Type)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    F test to compare two variances
+
+data:  uptake by Type
+F = 0.65275, num df = 41, denom df = 41, p-value = 0.1763
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.3508686 1.2143652
+sample estimates:
+ratio of variances 
+           0.65275 </code></pre>
+</div>
+</div>
+<p>Según el resultado obtenido con la prueba F, el valor de p (0.1763) es mayor a 0.05, esto indica que los datos presentan una homogeneidad de varianzas.</p>
+</section>
+</section>
+<section id="b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1" class="level3">
+<h3 class="anchored" data-anchor-id="b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Result_U2 <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(uptake <span class="sc">~</span> Type)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Result_U2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  uptake by Type
+W = 275, p-value = 5.759e-08
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>report<span class="sc">::</span><span class="fu">report</span>(Result_U2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Effect sizes were labelled following Funder's (2019) recommendations.
+
+The Wilcoxon rank sum test with continuity correction testing the difference in
+ranks between uptake and Type suggests that the effect is negative,
+statistically significant, and very large (W = 275.00, p &lt; .001; r (rank
+biserial) = -0.69, 95% CI [-0.80, -0.53])</code></pre>
+</div>
+</div>
+<p>El resultado nos indica que existe una diferencia significativa (W = 275.00, p &lt; .001; r = -0.69, IC del 95% [-0.80, -0.53]) entre los tratamientos.</p>
+</section>
+<section id="estadística-descriptiva-1" class="level3">
+<h3 class="anchored" data-anchor-id="estadística-descriptiva-1">Estadística descriptiva</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Type)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Type  n     mean       sd min     Q1 median    Q3  max
+1 Mississippi 42 20.88333 7.815773 7.7 13.875  19.30 28.05 35.5
+2      Quebec 42 33.54286 9.673830 9.3 30.325  37.15 40.15 45.5</code></pre>
+</div>
+</div>
+</section>
+<section id="c.-gráfico-para-ilustrar-los-resultados-1" class="level3">
+<h3 class="anchored" data-anchor-id="c.-gráfico-para-ilustrar-los-resultados-1">C. Gráfico para ilustrar los resultados</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggbetweenstats</span>(Datos_CO2, <span class="at">x =</span> Type, <span class="at">y =</span> uptake, <span class="at">type =</span> <span class="st">"np"</span>, <span class="at">bf.message =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-report" class="csl-entry" role="listitem">
+Makowski, D., Lüdecke, D., Patil, I., Thériault, R., Ben-Shachar, M. S., &amp; Wiernik, B. M. (2023). <em>Automated Results Reporting as a Practical Tool to Improve Reproducibility and Methodological Best Practices Adoption</em>. <a href="https://easystats.github.io/report/">https://easystats.github.io/report/</a>
+</div>
+<div id="ref-FSA" class="csl-entry" role="listitem">
+Ogle, D. H., Doll, J. C., Wheeler, A. P., &amp; Dinno, A. (2023). <em>FSA: Simple Fisheries Stock Assessment Methods</em>. <a href="https://CRAN.R-project.org/package=FSA">https://CRAN.R-project.org/package=FSA</a>
+</div>
+<div id="ref-ggstatsplot" class="csl-entry" role="listitem">
+Patil, I. (2021). <em><span></span>Visualizations with statistical details: The <span></span>’ggstatsplot’<span></span> approach<span></span></em>. <em>6</em>, 3167. <a href="https://doi.org/10.21105/joss.03167">https://doi.org/10.21105/joss.03167</a>
+</div>
 <div id="ref-openxlsx" class="csl-entry" role="listitem">
 Schauberger, P., &amp; Walker, A. (2023). <em>openxlsx: Read, Write and Edit xlsx Files</em>. <a href="https://CRAN.R-project.org/package=openxlsx">https://CRAN.R-project.org/package=openxlsx</a>
 </div>
