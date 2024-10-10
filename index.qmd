@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-### 1. Cargar la base de datos
+### 1. Cargando la base de datos
 
 En este proyecto final del diplomado, utilizaremos la base de datos "**absorción de dióxido de carbono en plantas herbáceas**", la misma, está disponible en R. A continuación, importamos los datos desde excel con las siguientes líneas de códigos:
 
@@ -36,7 +36,7 @@ Datos_CO2
 
 Fuente del paquete "**openxlsx**" [@openxlsx].
 
-### 2. Explorar la base de datos
+### 2. Explorando la base de datos
 
 ```{r}
 str(Datos_CO2)
@@ -45,9 +45,9 @@ summary(Datos_CO2)
 attach(Datos_CO2)
 ```
 
-### Estadística descriptiva
+### Aplicando estadística descriptiva
 
-El resumen de estadística descriptiva fue obtenido con el paquete "FSA" [@FSA] .
+El resumen de estadística descriptiva fue obtenido con el paquete "**FSA**" [@FSA] .
 
 ```{r}
 library(FSA)
@@ -58,13 +58,35 @@ Summarize(uptake ~ Plant, data = Datos_CO2)
 
 ### A. Verificando supuestos
 
-#### Supuesto de normalidad
+#### Supuesto de normalidad con gráficos (QQ-Plots)
+
+Los gráficos que se muestran a continuación, fueron generados con el paquete "**ggplot2**" [@ggplot2].
+
+```{r}
+library(ggplot2)
+
+ggplot(Datos_CO2, aes(sample = uptake,
+                 color = Treatment)) +
+  geom_qq()+
+  geom_qq_line() +
+  facet_wrap(~Treatment)
+```
+
+#### Gráfico de densidad
+
+```{r}
+ggplot(Datos_CO2, aes(x = uptake, fill = Treatment)) +
+  geom_density(alpha = 0.5) +
+  facet_wrap(~Treatment)
+```
+
+#### Supuesto de normalidad con test inferenciales
 
 ```{r}
 by(uptake, Treatment, shapiro.test)
 ```
 
-**Interpretacion:** Según la prueba de normalidad de Shapiro-Wilk, se observó que para los tratamientos "chilled" y "nonchilled", los valores de p fueron 0.001245 y 0.04302 respectivamente. Estos valores, inferiores al nivel de significancia comúnmente utilizado de 0.05, condujeron al rechazo de la hipótesis nula en ambos casos. Por lo tanto, se puede concluir que los datos no se ajustan a una distribución normal en ninguno de los tratamientos.
+**Interpretación:** Según la prueba de normalidad de Shapiro-Wilk, se observó que para los tratamientos "chilled" y "nonchilled", los valores de p fueron 0.001245 y 0.04302 respectivamente. Estos valores, inferiores al nivel de significancia comúnmente utilizado de 0.05, condujeron al rechazo de la hipótesis nula en ambos casos. Por lo tanto, se puede concluir que los datos no se ajustan a una distribución normal en ninguno de los tratamientos.
 
 Al no cumplir con el supuesto de distribución normal, se decide aplicar una prueba estadística no paramétrica. Es ente caso se aplicará la prueba U de Mann-Whitney.
 
@@ -74,7 +96,7 @@ Al no cumplir con el supuesto de distribución normal, se decide aplicar una pru
 var.test(uptake ~ Treatment)
 ```
 
-**Interpretacion:** Se ha realizado una prueba F para contrastar las varianzas en relación con el tratamiento. El resultado revela un valor de p de 0.466, el cual supera el nivel de significancia de 0.05. Por consiguiente, no se rechaza la hipótesis nula. Este hallazgo sugiere que cumple con el supuesto de homocedasticidad.
+**Interpretación:** Se ha realizado una prueba F para contrastar las varianzas en relación con el tratamiento. El resultado revela un valor de p de 0.466, el cual supera el nivel de significancia de 0.05. Por consiguiente, no se rechaza la hipótesis nula. Este hallazgo sugiere que cumple con el supuesto de homocedasticidad.
 
 ### B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney
 
@@ -84,17 +106,25 @@ Resultados_U
 
 ```
 
-**Interpretacion:** La prueba U o de rangos de Wilcoxon para los datos de 'uptake' según el tratamiento muestra un estadístico W de 576.5 y un valor p de 0.006358. Este resultado indica que existe una diferencia significativa en las medianas de 'uptake' entre los diferentes tratamientos. Dado que el valor p es menor a 0.05, rechazamos la hipótesis nula de que no hay diferencia entre las medianas. Concluimos que los tratamientos influyen significativamente en 'uptake'. 
+**Interpretación:** La prueba U o de rangos de Wilcoxon para los datos de 'uptake' según el tratamiento muestra un estadístico W de 576.5 y un valor p de 0.006358. Este resultado indica que existe una diferencia significativa en las medianas de 'uptake' entre los diferentes tratamientos. Dado que el valor p es menor a 0.05, rechazamos la hipótesis nula de que no hay diferencia entre las medianas. Concluimos que los tratamientos influyen significativamente en 'uptake'.
 
-El reporte lo generamos con el paquete "report" [@report].
+El reporte se ha generado con el paquete "**report**" [@report].
 
 ```{r}
 report::report(Resultados_U)
 ```
 
+### Estadística descriptiva
+
+```{r}
+Summarize(uptake ~ Treatment)
+```
+
+**Interpretación:** En el resultado, se observa diferencias significativas en la absorción de CO2 entre los tratamientos "chilled" y "nonchilled". El tratamiento "chilled" tiene una media de absorción de 23.78 con una desviación estándar de 10.88, mientras que "nonchilled" muestra una media de 30.64 con una desviación estándar de 9.70. Indicando variaciones significativas en los niveles de absorción de CO2 entre los grupos "chilled" y "nonchilled".
+
 ### C. Gráfico para ilustrar los resultados
 
-El gráfico fue generado con el paquete "ggstatsplot" [@ggstatsplot].
+El gráfico fue generado con el paquete "**ggstatsplot**" [@ggstatsplot].
 
 ```{r}
 library(ggstatsplot)
@@ -107,7 +137,25 @@ ggbetweenstats(Datos_CO2, x = Treatment, y = uptake,
 
 ### A. Verificando supuestos
 
-#### Supuesto de normalidad
+#### Supuesto de normalidad con gráficos
+
+```{r}
+ggplot(Datos_CO2, aes(sample = uptake,
+                 color = Type)) +
+  geom_qq()+
+  geom_qq_line() +
+  facet_grid(Type~.)
+```
+
+#### Gráfico de densidad
+
+```{r}
+ggplot(Datos_CO2, aes(x = uptake, fill = Type)) +
+  geom_density(alpha = 0.5) +
+  facet_wrap(~Type)
+```
+
+#### Supuesto de normalidad con test inferenciales
 
 ```{r}
 by(uptake, Type, shapiro.test)
@@ -121,7 +169,7 @@ Según el test de Shapiro-Wilk los tratamientos no cumplen con el supuesto de no
 var.test(uptake ~ Type)
 ```
 
-Según el resultado obtenido con la prueba F, el valor de p (0.1763) es mayor a 0.05, esto indica que los datos presentan una homogeneidad de varianzas. 
+Según el resultado obtenido con la prueba F, el valor de p (0.1763) es mayor a 0.05, esto indica que los datos presentan una homogeneidad de varianzas.
 
 ### B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney
 
@@ -132,14 +180,13 @@ Result_U2
 report::report(Result_U2)
 ```
 
-El resultado nos indica que existe una diferencia significativa (W = 275.00, p < .001; r = -0.69, IC del 95% [-0.80, -0.53]) entre los tratamientos.
+El resultado nos indica que existe una diferencia significativa (W = 275.00, p \< .001; r = -0.69, IC del 95% \[-0.80, -0.53\]) entre los tratamientos.
 
 ### Estadística descriptiva
 
 ```{r}
 Summarize(uptake ~ Type)
 ```
-
 
 ### C. Gráfico para ilustrar los resultados
 

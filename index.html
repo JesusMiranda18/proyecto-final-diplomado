@@ -100,13 +100,14 @@ div.csl-indent {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#cargar-la-base-de-datos" id="toc-cargar-la-base-de-datos" class="nav-link active" data-scroll-target="#cargar-la-base-de-datos">1. Cargar la base de datos</a></li>
-  <li><a href="#explorar-la-base-de-datos" id="toc-explorar-la-base-de-datos" class="nav-link" data-scroll-target="#explorar-la-base-de-datos">2. Explorar la base de datos</a></li>
-  <li><a href="#estadística-descriptiva" id="toc-estadística-descriptiva" class="nav-link" data-scroll-target="#estadística-descriptiva">Estadística descriptiva</a></li>
+  <li><a href="#cargando-la-base-de-datos" id="toc-cargando-la-base-de-datos" class="nav-link active" data-scroll-target="#cargando-la-base-de-datos">1. Cargando la base de datos</a></li>
+  <li><a href="#explorando-la-base-de-datos" id="toc-explorando-la-base-de-datos" class="nav-link" data-scroll-target="#explorando-la-base-de-datos">2. Explorando la base de datos</a></li>
+  <li><a href="#aplicando-estadística-descriptiva" id="toc-aplicando-estadística-descriptiva" class="nav-link" data-scroll-target="#aplicando-estadística-descriptiva">Aplicando estadística descriptiva</a></li>
   <li><a href="#análisis-estadístico-01" id="toc-análisis-estadístico-01" class="nav-link" data-scroll-target="#análisis-estadístico-01">Análisis Estadístico 01</a>
   <ul class="collapse">
   <li><a href="#a.-verificando-supuestos" id="toc-a.-verificando-supuestos" class="nav-link" data-scroll-target="#a.-verificando-supuestos">A. Verificando supuestos</a></li>
   <li><a href="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney" id="toc-b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney" class="nav-link" data-scroll-target="#b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</a></li>
+  <li><a href="#estadística-descriptiva" id="toc-estadística-descriptiva" class="nav-link" data-scroll-target="#estadística-descriptiva">Estadística descriptiva</a></li>
   <li><a href="#c.-gráfico-para-ilustrar-los-resultados" id="toc-c.-gráfico-para-ilustrar-los-resultados" class="nav-link" data-scroll-target="#c.-gráfico-para-ilustrar-los-resultados">C. Gráfico para ilustrar los resultados</a></li>
   </ul></li>
   <li><a href="#análisis-estadístico-02" id="toc-análisis-estadístico-02" class="nav-link" data-scroll-target="#análisis-estadístico-02">Análisis Estadístico 02</a>
@@ -154,8 +155,8 @@ div.csl-indent {
 </header>
 
 
-<section id="cargar-la-base-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="cargar-la-base-de-datos">1. Cargar la base de datos</h3>
+<section id="cargando-la-base-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="cargando-la-base-de-datos">1. Cargando la base de datos</h3>
 <p>En este proyecto final del diplomado, utilizaremos la base de datos “<strong>absorción de dióxido de carbono en plantas herbáceas</strong>”, la misma, está disponible en R. A continuación, importamos los datos desde excel con las siguientes líneas de códigos:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
@@ -251,8 +252,8 @@ div.csl-indent {
 </div>
 <p>Fuente del paquete “<strong>openxlsx</strong>” <span class="citation" data-cites="openxlsx">(<a href="#ref-openxlsx" role="doc-biblioref">Schauberger &amp; Walker, 2023</a>)</span>.</p>
 </section>
-<section id="explorar-la-base-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="explorar-la-base-de-datos">2. Explorar la base de datos</h3>
+<section id="explorando-la-base-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="explorando-la-base-de-datos">2. Explorando la base de datos</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Datos_CO2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -283,9 +284,9 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Datos_CO2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="estadística-descriptiva" class="level3">
-<h3 class="anchored" data-anchor-id="estadística-descriptiva">Estadística descriptiva</h3>
-<p>El resumen de estadística descriptiva fue obtenido con el paquete “FSA” <span class="citation" data-cites="FSA">(<a href="#ref-FSA" role="doc-biblioref">Ogle et&nbsp;al., 2023</a>)</span> .</p>
+<section id="aplicando-estadística-descriptiva" class="level3">
+<h3 class="anchored" data-anchor-id="aplicando-estadística-descriptiva">Aplicando estadística descriptiva</h3>
+<p>El resumen de estadística descriptiva fue obtenido con el paquete “<strong>FSA</strong>” <span class="citation" data-cites="FSA">(<a href="#ref-FSA" role="doc-biblioref">Ogle et&nbsp;al., 2023</a>)</span> .</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FSA)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Plant, <span class="at">data =</span> Datos_CO2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -310,10 +311,41 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="análisis-estadístico-01">Análisis Estadístico 01</h2>
 <section id="a.-verificando-supuestos" class="level3">
 <h3 class="anchored" data-anchor-id="a.-verificando-supuestos">A. Verificando supuestos</h3>
-<section id="supuesto-de-normalidad" class="level4">
-<h4 class="anchored" data-anchor-id="supuesto-de-normalidad">Supuesto de normalidad</h4>
+<section id="supuesto-de-normalidad-con-gráficos-qq-plots" class="level4">
+<h4 class="anchored" data-anchor-id="supuesto-de-normalidad-con-gráficos-qq-plots">Supuesto de normalidad con gráficos (QQ-Plots)</h4>
+<p>Los gráficos que se muestran a continuación, fueron generados con el paquete “<strong>ggplot2</strong>” <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham, 2016</a>)</span>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(uptake, Treatment, shapiro.test)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Datos_CO2, <span class="fu">aes</span>(<span class="at">sample =</span> uptake, <span class="at">color =</span> Treatment)) <span class="sc">+</span> <span class="fu">geom_qq</span>() <span class="sc">+</span> <span class="fu">geom_qq_line</span>() <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>Treatment)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráfico-de-densidad" class="level4">
+<h4 class="anchored" data-anchor-id="gráfico-de-densidad">Gráfico de densidad</h4>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Datos_CO2, <span class="fu">aes</span>(<span class="at">x =</span> uptake, <span class="at">fill =</span> Treatment)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>Treatment)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="supuesto-de-normalidad-con-test-inferenciales" class="level4">
+<h4 class="anchored" data-anchor-id="supuesto-de-normalidad-con-test-inferenciales">Supuesto de normalidad con test inferenciales</h4>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(uptake, Treatment, shapiro.test)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Treatment: chilled
 
@@ -331,13 +363,13 @@ data:  dd[x, ]
 W = 0.94505, p-value = 0.04302</code></pre>
 </div>
 </div>
-<p><strong>Interpretacion:</strong> Según la prueba de normalidad de Shapiro-Wilk, se observó que para los tratamientos “chilled” y “nonchilled”, los valores de p fueron 0.001245 y 0.04302 respectivamente. Estos valores, inferiores al nivel de significancia comúnmente utilizado de 0.05, condujeron al rechazo de la hipótesis nula en ambos casos. Por lo tanto, se puede concluir que los datos no se ajustan a una distribución normal en ninguno de los tratamientos.</p>
+<p><strong>Interpretación:</strong> Según la prueba de normalidad de Shapiro-Wilk, se observó que para los tratamientos “chilled” y “nonchilled”, los valores de p fueron 0.001245 y 0.04302 respectivamente. Estos valores, inferiores al nivel de significancia comúnmente utilizado de 0.05, condujeron al rechazo de la hipótesis nula en ambos casos. Por lo tanto, se puede concluir que los datos no se ajustan a una distribución normal en ninguno de los tratamientos.</p>
 <p>Al no cumplir con el supuesto de distribución normal, se decide aplicar una prueba estadística no paramétrica. Es ente caso se aplicará la prueba U de Mann-Whitney.</p>
 </section>
 <section id="supuesto-de-homogeneidad-de-varianzas" class="level4">
 <h4 class="anchored" data-anchor-id="supuesto-de-homogeneidad-de-varianzas">Supuesto de homogeneidad de varianzas</h4>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(uptake <span class="sc">~</span> Treatment)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(uptake <span class="sc">~</span> Treatment)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     F test to compare two variances
@@ -352,14 +384,14 @@ ratio of variances
             1.2578 </code></pre>
 </div>
 </div>
-<p><strong>Interpretacion:</strong> Se ha realizado una prueba F para contrastar las varianzas en relación con el tratamiento. El resultado revela un valor de p de 0.466, el cual supera el nivel de significancia de 0.05. Por consiguiente, no se rechaza la hipótesis nula. Este hallazgo sugiere que cumple con el supuesto de homocedasticidad.</p>
+<p><strong>Interpretación:</strong> Se ha realizado una prueba F para contrastar las varianzas en relación con el tratamiento. El resultado revela un valor de p de 0.466, el cual supera el nivel de significancia de 0.05. Por consiguiente, no se rechaza la hipótesis nula. Este hallazgo sugiere que cumple con el supuesto de homocedasticidad.</p>
 </section>
 </section>
 <section id="b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney" class="level3">
 <h3 class="anchored" data-anchor-id="b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Resultados_U <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(uptake <span class="sc">~</span> Treatment)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Resultados_U</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Resultados_U <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(uptake <span class="sc">~</span> Treatment)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>Resultados_U</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Wilcoxon rank sum test with continuity correction
@@ -369,10 +401,10 @@ W = 576.5, p-value = 0.006358
 alternative hypothesis: true location shift is not equal to 0</code></pre>
 </div>
 </div>
-<p><strong>Interpretacion:</strong> La prueba U o de rangos de Wilcoxon para los datos de ‘uptake’ según el tratamiento muestra un estadístico W de 576.5 y un valor p de 0.006358. Este resultado indica que existe una diferencia significativa en las medianas de ‘uptake’ entre los diferentes tratamientos. Dado que el valor p es menor a 0.05, rechazamos la hipótesis nula de que no hay diferencia entre las medianas. Concluimos que los tratamientos influyen significativamente en ‘uptake’.</p>
-<p>El reporte lo generamos con el paquete “report” <span class="citation" data-cites="report">(<a href="#ref-report" role="doc-biblioref">Makowski et&nbsp;al., 2023</a>)</span>.</p>
+<p><strong>Interpretación:</strong> La prueba U o de rangos de Wilcoxon para los datos de ‘uptake’ según el tratamiento muestra un estadístico W de 576.5 y un valor p de 0.006358. Este resultado indica que existe una diferencia significativa en las medianas de ‘uptake’ entre los diferentes tratamientos. Dado que el valor p es menor a 0.05, rechazamos la hipótesis nula de que no hay diferencia entre las medianas. Concluimos que los tratamientos influyen significativamente en ‘uptake’.</p>
+<p>El reporte se ha generado con el paquete “<strong>report</strong>” <span class="citation" data-cites="report">(<a href="#ref-report" role="doc-biblioref">Makowski et&nbsp;al., 2023</a>)</span>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>report<span class="sc">::</span><span class="fu">report</span>(Resultados_U)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>report<span class="sc">::</span><span class="fu">report</span>(Resultados_U)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Effect sizes were labelled following Funder's (2019) recommendations.
 
@@ -383,17 +415,29 @@ statistically significant, and large (W = 576.50, p = 0.006; r (rank biserial)
 </div>
 </div>
 </section>
+<section id="estadística-descriptiva" class="level3">
+<h3 class="anchored" data-anchor-id="estadística-descriptiva">Estadística descriptiva</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Treatment)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Treatment  n     mean        sd  min     Q1 median   Q3  max
+1    chilled 42 23.78333 10.884312  7.7 14.525   19.7 34.9 42.4
+2 nonchilled 42 30.64286  9.704994 10.6 26.475   31.3 38.7 45.5</code></pre>
+</div>
+</div>
+<p><strong>Interpretación:</strong> En el resultado, se observa diferencias significativas en la absorción de CO2 entre los tratamientos “chilled” y “nonchilled”. El tratamiento “chilled” tiene una media de absorción de 23.78 con una desviación estándar de 10.88, mientras que “nonchilled” muestra una media de 30.64 con una desviación estándar de 9.70. Indicando variaciones significativas en los niveles de absorción de CO2 entre los grupos “chilled” y “nonchilled”.</p>
+</section>
 <section id="c.-gráfico-para-ilustrar-los-resultados" class="level3">
 <h3 class="anchored" data-anchor-id="c.-gráfico-para-ilustrar-los-resultados">C. Gráfico para ilustrar los resultados</h3>
-<p>El gráfico fue generado con el paquete “ggstatsplot” <span class="citation" data-cites="ggstatsplot">(<a href="#ref-ggstatsplot" role="doc-biblioref">Patil, 2021</a>)</span>.</p>
+<p>El gráfico fue generado con el paquete “<strong>ggstatsplot</strong>” <span class="citation" data-cites="ggstatsplot">(<a href="#ref-ggstatsplot" role="doc-biblioref">Patil, 2021</a>)</span>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggbetweenstats</span>(Datos_CO2, <span class="at">x =</span> Treatment, <span class="at">y =</span> uptake, <span class="at">type =</span> <span class="st">"np"</span>, <span class="at">bf.message =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggbetweenstats</span>(Datos_CO2, <span class="at">x =</span> Treatment, <span class="at">y =</span> uptake, <span class="at">type =</span> <span class="st">"np"</span>, <span class="at">bf.message =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -404,10 +448,37 @@ statistically significant, and large (W = 576.50, p = 0.006; r (rank biserial)
 <h2 class="anchored" data-anchor-id="análisis-estadístico-02">Análisis Estadístico 02</h2>
 <section id="a.-verificando-supuestos-1" class="level3">
 <h3 class="anchored" data-anchor-id="a.-verificando-supuestos-1">A. Verificando supuestos</h3>
-<section id="supuesto-de-normalidad-1" class="level4">
-<h4 class="anchored" data-anchor-id="supuesto-de-normalidad-1">Supuesto de normalidad</h4>
+<section id="supuesto-de-normalidad-con-gráficos" class="level4">
+<h4 class="anchored" data-anchor-id="supuesto-de-normalidad-con-gráficos">Supuesto de normalidad con gráficos</h4>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(uptake, Type, shapiro.test)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Datos_CO2, <span class="fu">aes</span>(<span class="at">sample =</span> uptake, <span class="at">color =</span> Type)) <span class="sc">+</span> <span class="fu">geom_qq</span>() <span class="sc">+</span> <span class="fu">geom_qq_line</span>() <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_grid</span>(Type <span class="sc">~</span> .)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráfico-de-densidad-1" class="level4">
+<h4 class="anchored" data-anchor-id="gráfico-de-densidad-1">Gráfico de densidad</h4>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Datos_CO2, <span class="fu">aes</span>(<span class="at">x =</span> uptake, <span class="at">fill =</span> Type)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Type)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="supuesto-de-normalidad-con-test-inferenciales-1" class="level4">
+<h4 class="anchored" data-anchor-id="supuesto-de-normalidad-con-test-inferenciales-1">Supuesto de normalidad con test inferenciales</h4>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(uptake, Type, shapiro.test)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Type: Mississippi
 
@@ -430,7 +501,7 @@ W = 0.85988, p-value = 0.0001111</code></pre>
 <section id="supuesto-de-homogeneidad-de-varianzas-1" class="level4">
 <h4 class="anchored" data-anchor-id="supuesto-de-homogeneidad-de-varianzas-1">Supuesto de homogeneidad de varianzas</h4>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(uptake <span class="sc">~</span> Type)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(uptake <span class="sc">~</span> Type)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     F test to compare two variances
@@ -451,8 +522,8 @@ ratio of variances
 <section id="b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1" class="level3">
 <h3 class="anchored" data-anchor-id="b.-aplicando-la-prueba-estadística-no-paramétrica-u-de-mann-whitney-1">B. Aplicando la prueba estadística no paramétrica U de Mann-Whitney</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Result_U2 <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(uptake <span class="sc">~</span> Type)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Result_U2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Result_U2 <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(uptake <span class="sc">~</span> Type)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>Result_U2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Wilcoxon rank sum test with continuity correction
@@ -461,7 +532,7 @@ data:  uptake by Type
 W = 275, p-value = 5.759e-08
 alternative hypothesis: true location shift is not equal to 0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>report<span class="sc">::</span><span class="fu">report</span>(Result_U2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>report<span class="sc">::</span><span class="fu">report</span>(Result_U2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Effect sizes were labelled following Funder's (2019) recommendations.
 
@@ -476,7 +547,7 @@ biserial) = -0.69, 95% CI [-0.80, -0.53])</code></pre>
 <section id="estadística-descriptiva-1" class="level3">
 <h3 class="anchored" data-anchor-id="estadística-descriptiva-1">Estadística descriptiva</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Type)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Summarize</span>(uptake <span class="sc">~</span> Type)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         Type  n     mean       sd min     Q1 median    Q3  max
 1 Mississippi 42 20.88333 7.815773 7.7 13.875  19.30 28.05 35.5
@@ -487,13 +558,13 @@ biserial) = -0.69, 95% CI [-0.80, -0.53])</code></pre>
 <section id="c.-gráfico-para-ilustrar-los-resultados-1" class="level3">
 <h3 class="anchored" data-anchor-id="c.-gráfico-para-ilustrar-los-resultados-1">C. Gráfico para ilustrar los resultados</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggbetweenstats</span>(Datos_CO2, <span class="at">x =</span> Type, <span class="at">y =</span> uptake, <span class="at">type =</span> <span class="st">"np"</span>, <span class="at">bf.message =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggbetweenstats</span>(Datos_CO2, <span class="at">x =</span> Type, <span class="at">y =</span> uptake, <span class="at">type =</span> <span class="st">"np"</span>, <span class="at">bf.message =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -514,6 +585,9 @@ Patil, I. (2021). <em><span></span>Visualizations with statistical details: The 
 </div>
 <div id="ref-openxlsx" class="csl-entry" role="listitem">
 Schauberger, P., &amp; Walker, A. (2023). <em>openxlsx: Read, Write and Edit xlsx Files</em>. <a href="https://CRAN.R-project.org/package=openxlsx">https://CRAN.R-project.org/package=openxlsx</a>
+</div>
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, H. (2016). <em>ggplot2: Elegant Graphics for Data Analysis</em>. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
 </div>
 </div></section></div></main>
 <!-- /main column -->
